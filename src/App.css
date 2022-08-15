@@ -1,18 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,15 +9,58 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.loading-animation {
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
+#layer1{
+  width: 10vh;
+}
+
+#layer2{
+  z-index: 1;
+  width: 15vh;
+}
+
+#layer3{
+  z-index: 2;
+  width: 20vh;
+}
+
+#layer4{
+  z-index: 3;
+  width: 25vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #layer1{
+    animation: right-spin infinite 10s linear;
+
+  }
+  #layer2{
+    animation: left-spin infinite 30s linear;
+  }
+  #layer3{
+    animation: right-spin infinite 50s linear;
+  }
+  #layer4{
+    animation: left-spin infinite 150s linear;
+  }
+}
+@keyframes right-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes left-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }
